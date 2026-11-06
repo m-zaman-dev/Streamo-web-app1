@@ -1,0 +1,176 @@
+/* ABOUT page (template-01-about-page.html) */
+
+.about-intro h2 {
+    font-size: clamp(28px, 4vw, 45px);
+    font-weight: 400;
+}
+
+.about-intro p,
+.about-intro .text-block p {
+    color: #676464;
+}
+
+/* 3 mission boxes */
+.mission {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+    padding-bottom: 60px;
+}
+
+.mission h3 {
+    font-size: 18px;
+    color: #5a5858;
+}
+
+.mission p {
+    padding-top: 10px;
+    font-size: 15px;
+    color: #5a5858;
+}
+
+.mission .check-list {
+    margin-top: 10px;
+    color: #5a5858;
+}
+
+/* 4 numbers */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 20px;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.stats img {
+    display: block;
+    width: 60px;
+    margin: 0 auto 15px;
+}
+
+.stats h3 {
+    font-size: 40px;
+}
+
+.stats p {
+    font-size: 15px;
+}
+
+/* team */
+
+.team {
+    padding: 70px 0;
+    background-color: #f7f1e3;
+    background-image: url(image/about-12.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.team-box {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 50px;
+    margin-top: 40px;
+}
+
+.person-photo {
+    position: relative;
+    overflow: hidden;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.person-photo:hover {
+    background-color: #ffda84;
+}
+
+.person-photo > img {
+    display: block;
+    width: 100%;
+    height: 270px;
+    object-fit: contain;
+}
+
+/* social icons come in on hover */
+.person-icons {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.person-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ee6109;
+    color: white;
+    font-size: 16px;
+    opacity: 0;
+    transform: translateX(-40px) rotate(-360deg);
+    transition: 0.5s;
+}
+
+.person-photo:hover .person-icons a,
+.person-photo:focus-within .person-icons a {
+    opacity: 1;
+    transform: translateX(0) rotate(0);
+}
+
+.person-icons a:nth-child(2) {
+    transition-delay: 0.1s;
+}
+
+.person-icons a:nth-child(3) {
+    transition-delay: 0.2s;
+}
+
+.person-icons a:nth-child(4) {
+    transition-delay: 0.3s;
+}
+
+.person-name {
+    margin-top: 15px;
+    text-align: center;
+}
+
+@media (max-width: 990px) {
+    .team-box {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 770px) {
+    .mission {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-box {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .person-photo {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .stats h3 {
+        font-size: 30px;
+    }
+}
